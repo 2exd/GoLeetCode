@@ -33,6 +33,6 @@ func gift() int {
 	return 0
 }
 
-func main() {
-	fmt.Println(gift())
-}
+// func main() {
+// 	fmt.Println(gift())
+// }

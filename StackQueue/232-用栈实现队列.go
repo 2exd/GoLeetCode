@@ -1,4 +1,5 @@
-// package main
+package main
+
 //
 // /*232-用栈实现队列*/
 //
