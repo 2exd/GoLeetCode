@@ -377,8 +377,8 @@ func (l *List) SubList(begin, num uint64) (newList *List) {
 	}
 	newList = New()
 	l.mutex.Lock()
+	// 起点在范围内,可以复制
 	if begin < l.size {
-		// 起点在范围内,可以复制
 		n := l.first
 		for i := uint64(0); i < begin; i++ {
 			n = n.nextNode()
