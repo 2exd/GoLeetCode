@@ -1,6 +1,6 @@
 package main
 
-func sortArray(nums []int) []int {
+func heapSortArray(nums []int) []int {
 	// 堆排序-大根堆，升序排序，基于比较交换的不稳定算法，时间O(nlogn)，空间O(1)-迭代建堆
 	// 遍历元素时间O(n)，堆化时间O(logn)，开始建堆次数多些，后面次数少
 	// 主要思路：
