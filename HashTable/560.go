@@ -18,5 +18,3 @@ func subarraySum(nums []int, k int) int {
 // func main() {
 // 	subarraySum([]int{1, 1, 1}, 2)
 // }
-
-

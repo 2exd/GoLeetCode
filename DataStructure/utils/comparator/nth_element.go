@@ -16,7 +16,7 @@ package comparator
 // @param    	Cmp			...Comparator				比较函数
 // @return    	value		interface{}					第n+1大的元素
 func NthElement(arr *[]interface{}, n int, Cmp ...Comparator) (value interface{}) {
-	if arr == nil || (*arr) == nil || len((*arr)) == 0 {
+	if arr == nil || (*arr) == nil || len(*arr) == 0 {
 		return nil
 	}
 	// 判断比较函数是否有效
@@ -31,11 +31,11 @@ func NthElement(arr *[]interface{}, n int, Cmp ...Comparator) (value interface{}
 		return nil
 	}
 	// 判断待确认的第n位是否在该集合范围内
-	if len((*arr)) < n || n < 0 {
+	if len(*arr) < n || n < 0 {
 		return nil
 	}
 	// 进行查找
-	nthElement(arr, 0, len((*arr))-1, n, cmp)
+	nthElement(arr, 0, len(*arr)-1, n, cmp)
 	return (*arr)[n]
 }
 

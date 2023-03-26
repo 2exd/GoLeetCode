@@ -3,7 +3,7 @@ package main
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	m, n := len(obstacleGrid), len(obstacleGrid[0])
 	dp := make([][]int, m)
-	for i, _ := range dp {
+	for i := range dp {
 		dp[i] = make([]int, n)
 	}
 	// 初始化, 如果是障碍物, 后面的就都是0, 不用循环了

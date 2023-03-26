@@ -8,9 +8,9 @@ package main
 	时间复杂度：O(N+M)
 	空间复杂度：O(N+M)
 */
-//func backspaceCompare(s string, t string) bool {
+// func backspaceCompare(s string, t string) bool {
 //	return build(s) == build(t)
-//}
+// }
 func build(str string) string {
 	s := []byte{}
 	for i := range str {
@@ -68,8 +68,8 @@ func backspaceCompare(s, t string) bool {
 }
 
 //
-//func main() {
+// func main() {
 //	var s = "ab#c"
 //	var t = "ab#c"
 //	backspaceCompare(s, t)
-//}
+// }

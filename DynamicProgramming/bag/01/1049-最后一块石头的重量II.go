@@ -1,5 +1,6 @@
 package main
 
+/*1049-最后一块石头的重量II*/
 func lastStoneWeightII(stones []int) int {
 	// 15001 = 30 * 1000 /2 +1
 	dp := make([]int, 15001)

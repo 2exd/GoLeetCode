@@ -3,7 +3,7 @@ package main
 /*剑指 Offer 05. 替换空格 easy*/
 
 // 遍历添加
-//func replaceSpace(s string) string {
+// func replaceSpace(s string) string {
 //	b := []byte(s)
 //	result := make([]byte, 0)
 //	for i := 0; i < len(b); i++ {
@@ -14,7 +14,7 @@ package main
 //		}
 //	}
 //	return string(result)
-//}
+// }
 
 // 原地修改
 func replaceSpace(s string) string {

@@ -47,8 +47,8 @@ func countPrimeSetBits(left int, right int) (ans int) {
 }
 */
 
-//func main(){
+// func main(){
 //	fmt.Println(countPrimeSetBits(6,10))
 //
 //	fmt.Println(countPrimeSetBits(10,15))
-//}
+// }

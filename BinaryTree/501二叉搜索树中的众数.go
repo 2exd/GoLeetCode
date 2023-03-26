@@ -5,7 +5,7 @@ func findModeMy(root *TreeNode) []int {
 	mapNum := map[int]int{}
 	var res []int
 	findMost(root, &mapNum)
-	max := 0 //一个比较大的值
+	max := 0 // 一个比较大的值
 	for _, value := range mapNum {
 		if value > max {
 			max = value
@@ -19,7 +19,7 @@ func findModeMy(root *TreeNode) []int {
 	return res
 }
 
-//中序遍历
+// 中序遍历
 func findMost(root *TreeNode, mapNum *map[int]int) {
 	if root == nil {
 		return

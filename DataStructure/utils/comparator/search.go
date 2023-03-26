@@ -18,7 +18,7 @@ package comparator
 // @param    	Cmp			...Comparator				比较函数
 // @return    	idx			int							待查找元素下标
 func Search(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) {
-	if arr == nil || (*arr) == nil || len((*arr)) == 0 {
+	if arr == nil || (*arr) == nil || len(*arr) == 0 {
 		return
 	}
 	// 判断比较函数是否有效,若无效则寻找默认比较函数
@@ -49,7 +49,7 @@ func Search(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) {
 // @return    	idx			int							待查找元素下标
 func search(arr *[]interface{}, e interface{}, cmp Comparator) (idx int) {
 	// 通过二分查找的方式寻找该元素
-	l, m, r := 0, (len((*arr))-1)/2, len((*arr))
+	l, m, r := 0, (len(*arr)-1)/2, len(*arr)
 	for l < r {
 		m = (l + r) / 2
 		if cmp((*arr)[m], e) < 0 {

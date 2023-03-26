@@ -4,7 +4,7 @@ package main
 /* 如果letter大于target，就直接找比letter大的
 如果letter小于target，*/
 func nextGreatestLetter(letters []byte, target byte) byte {
-	var minDistance int = 199
+	var minDistance = 199
 	for _, letter := range letters {
 		if letter > target {
 			minDistance = findMinDistance(minDistance, int(letter-target))
@@ -28,7 +28,7 @@ func findMinDistance(x, y int) int {
 	}
 }
 
-//func main() {
+// func main() {
 //	//var letters = []byte{'c', 'f', 'j'}
 //	//target := 'a'
 //	//var letters = []byte{'c', 'f', 'j'}
@@ -40,4 +40,4 @@ func findMinDistance(x, y int) int {
 //	fmt.Printf("%d\n", '}')
 //	fmt.Printf("%d\n", '`')
 //	fmt.Printf("%c", nextGreatestLetter(letters, byte(target)))
-//}
+// }

@@ -6,7 +6,7 @@ import "math"
 func getMinimumDifferenceMy(root *TreeNode) int {
 	var res []int
 	findMIn(root, &res)
-	min := 1000000 //一个比较大的值
+	min := 1000000 // 一个比较大的值
 	for i := 1; i < len(res); i++ {
 		tempValue := res[i] - res[i-1]
 		if tempValue < min {
@@ -16,7 +16,7 @@ func getMinimumDifferenceMy(root *TreeNode) int {
 	return min
 }
 
-//中序遍历
+// 中序遍历
 func findMIn(root *TreeNode, res *[]int) {
 	if root == nil {
 		return

@@ -2,7 +2,7 @@ package main
 
 func maxProfit(prices []int, fee int) int {
 	// buy in the first day
-	var minBuy int = prices[0]
+	var minBuy = prices[0]
 	var res int
 	for i := 0; i < len(prices); i++ {
 		// if current price less than minBuy then buy immediately

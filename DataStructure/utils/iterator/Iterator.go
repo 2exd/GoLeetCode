@@ -113,12 +113,12 @@ func (i *Iterator) End() (I *Iterator) {
 		// 迭代器为空，直接返回
 		return nil
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空，下标设为-1
 		i.index = -1
 	} else {
 		// 元素集合非空，下标设为最后一个元素的下标
-		i.index = len((*i.data)) - 1
+		i.index = len(*i.data) - 1
 	}
 	// 返回修改后的该指针
 	return &Iterator{
@@ -176,7 +176,7 @@ func (i *Iterator) Value() (e interface{}) {
 		// 迭代器为nil，返回nil
 		return nil
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空，返回nil
 		return nil
 	}
@@ -184,9 +184,9 @@ func (i *Iterator) Value() (e interface{}) {
 		// 下标超过元素集合范围下限，最近元素为首元素
 		i.index = 0
 	}
-	if i.index >= len((*i.data)) {
+	if i.index >= len(*i.data) {
 		// 下标超过元素集合范围上限，最近元素为尾元素
-		i.index = len((*i.data)) - 1
+		i.index = len(*i.data) - 1
 	}
 	// 返回下标指向元素
 	return (*i.data)[i.index]
@@ -209,12 +209,12 @@ func (i *Iterator) HasNext() (b bool) {
 		// 迭代器为nil时不能后移
 		return false
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空时不能后移
 		return false
 	}
 	// 下标到达元素集合上限时不能后移,否则可以后移
-	return i.index < len((*i.data))
+	return i.index < len(*i.data)
 }
 
 // Next
@@ -238,13 +238,13 @@ func (i *Iterator) Next() (b bool) {
 		i.index++
 		return true
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空时下标设为-1同时返回false
 		i.index = -1
 		return false
 	}
 	// 不满足后移条件时将下标设为尾元素下标并返回false
-	i.index = len((*i.data)) - 1
+	i.index = len(*i.data) - 1
 	return false
 }
 
@@ -264,7 +264,7 @@ func (i *Iterator) HasPre() (b bool) {
 		// 迭代器为nil时不能前移
 		return false
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空时不能前移
 		return false
 	}
@@ -293,7 +293,7 @@ func (i *Iterator) Pre() (b bool) {
 		i.index--
 		return true
 	}
-	if len((*i.data)) == 0 {
+	if len(*i.data) == 0 {
 		// 元素集合为空时下标设为-1同时返回false
 		i.index = -1
 		return false

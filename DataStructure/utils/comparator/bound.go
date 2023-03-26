@@ -18,7 +18,7 @@ package comparator
 // @param    	Cmp			...Comparator				比较函数
 // @return    	idx 		int							待查找元素的上界
 func UpperBound(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) {
-	if arr == nil || (*arr) == nil || len((*arr)) == 0 {
+	if arr == nil || (*arr) == nil || len(*arr) == 0 {
 		return -1
 	}
 	// 判断比较函数是否有效
@@ -49,7 +49,7 @@ func UpperBound(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) 
 // @param    	Cmp			...Comparator				比较函数
 // @return    	idx 		int							待查找元素的上界
 func upperBound(arr *[]interface{}, e interface{}, cmp Comparator) (idx int) {
-	l, m, r := 0, len((*arr))/2, len((*arr))-1
+	l, m, r := 0, len(*arr)/2, len(*arr)-1
 	for l < r {
 		m = (l + r + 1) / 2
 		if cmp((*arr)[m], e) <= 0 {
@@ -73,7 +73,7 @@ func upperBound(arr *[]interface{}, e interface{}, cmp Comparator) (idx int) {
 // @param    	Cmp			...Comparator				比较函数
 // @return    	idx 		int							待查找元素的下界
 func LowerBound(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) {
-	if arr == nil || (*arr) == nil || len((*arr)) == 0 {
+	if arr == nil || (*arr) == nil || len(*arr) == 0 {
 		return -1
 	}
 	// 判断比较函数是否有效
@@ -103,7 +103,7 @@ func LowerBound(arr *[]interface{}, e interface{}, Cmp ...Comparator) (idx int) 
 // @param    	Cmp			...Comparator				比较函数
 // @return    	idx 		int							待查找元素的下界
 func lowerBound(arr *[]interface{}, e interface{}, cmp Comparator) (idx int) {
-	l, m, r := 0, len((*arr))/2, len((*arr))
+	l, m, r := 0, len(*arr)/2, len(*arr)
 	for l < r {
 		m = (l + r) / 2
 		if cmp((*arr)[m], e) >= 0 {

@@ -33,11 +33,11 @@ func deleteNode(root *TreeNode, key int) *TreeNode {
 	if root.Left == nil {
 		return root.Right
 	}
-	//minnode := root.Right
-	//for minnode.Left != nil {
+	// minnode := root.Right
+	// for minnode.Left != nil {
 	//	minnode = minnode.Left
-	//}
-	//root.Val = minnode.Val
+	// }
+	// root.Val = minnode.Val
 	root.Val = root.Right.Val
 	root.Right = deleteNode1(root.Right)
 	return root

@@ -71,9 +71,9 @@ func updateMatrix(mat [][]int) [][]int {
 	return ans
 }
 
-//func main() {
+// func main() {
 //	//arr := [][]int{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}
 //	//arr := [][]int{{0,0,0},{0,1,0},{1,1,1}}
 //	arr := [][]int{{0}, {1}}
 //	fmt.Println(updateMatrix(arr))
-//}
+// }

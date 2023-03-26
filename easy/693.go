@@ -35,6 +35,6 @@ func hasAlternatingBits(n int) bool {
 时间复杂度：O(1)。仅使用了常数时间来计算。
 空间复杂度：O(1)。使用了常数空间来存储中间变量*/
 
-//func main()  {
+// func main()  {
 //	fmt.Println(hasAlternatingBits(5))
-//}
+// }

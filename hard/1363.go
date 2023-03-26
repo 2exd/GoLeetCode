@@ -151,62 +151,62 @@ m,n剩下的元素再放入1:1放入ans数组中
 */
 func largestMultipleOfThree(digits []int) string {
 	count := len(digits)
-	anses := make([]byte,0)
-	one := make([]byte,0)
-	two := make([]byte,0)
-	for i:=0;i<count;i++ {
-		if digits[i] % 3 == 0 {
-			anses = append(anses,byte(digits[i]+int('0')))
-		}else if digits[i] % 3 == 1 {
-			one = append(one,byte(digits[i]+int('0')))
-		}else if digits[i] % 3 == 2 {
-			two = append(two,byte(digits[i]+int('0')))
+	anses := make([]byte, 0)
+	one := make([]byte, 0)
+	two := make([]byte, 0)
+	for i := 0; i < count; i++ {
+		if digits[i]%3 == 0 {
+			anses = append(anses, byte(digits[i]+int('0')))
+		} else if digits[i]%3 == 1 {
+			one = append(one, byte(digits[i]+int('0')))
+		} else if digits[i]%3 == 2 {
+			two = append(two, byte(digits[i]+int('0')))
 		}
 	}
 	// 降序排列
 	sort.Slice(one, func(i, j int) bool {
 		s, t := one[i], one[j]
-		return s<t
+		return s < t
 	})
 	sort.Slice(two, func(i, j int) bool {
 		s, t := two[i], two[j]
-		return s<t
+		return s < t
 	})
 	len1 := len(one)
 	len2 := len(two)
-	i := len1-1
-	j := len2-1
+	i := len1 - 1
+	j := len2 - 1
 	// 余为1和余为2的1:1放入,保证一方>0
-	for i>0 && j>0 {
-		anses = append(anses,one[i])
+	for i > 0 && j > 0 {
+		anses = append(anses, one[i])
 		i--
-		anses = append(anses,two[j])
+		anses = append(anses, two[j])
 		j--
 	}
 	// 余为1的三个三个放
-	for i>1 {
-		anses = append(anses,one[i])
+	for i > 1 {
+		anses = append(anses, one[i])
 		i--
-		anses = append(anses,one[i])
+		anses = append(anses, one[i])
 		i--
-		anses = append(anses,one[i])
+		anses = append(anses, one[i])
 		i--
 	}
 	// 余为2的三个三个放
-	for j>1 {
-		anses = append(anses,two[j])
+	for j > 1 {
+		anses = append(anses, two[j])
 		j--
-		anses = append(anses,two[j])
+		anses = append(anses, two[j])
 		j--
-		anses = append(anses,two[j])
+		anses = append(anses, two[j])
 		j--
 	}
-	//for i>=0 && j>=0 {
+	// for i>=0 && j>=0 {
 	//	anses = append(anses,one[i])
 	//	i--
 	//	anses = append(anses,two[j])
 	//	j--
-	//}
+	// }
 
 	/*
 	   var do func(){
@@ -229,7 +229,7 @@ func largestMultipleOfThree(digits []int) string {
 	}
 	sort.Slice(anses, func(i, j int) bool {
 		s, t := anses[i], anses[j]
-		return s>t
+		return s > t
 	})
 
 	if anses[0] == '0' {
@@ -239,13 +239,13 @@ func largestMultipleOfThree(digits []int) string {
 }
 
 func main() {
-	//arr := []int{8, 6, 7, 1, 0, 0, 8, 9, 7, 5, 3, 6, 3, 2}
-	//arr := []int{8,6,7,1,0}
-	//arr := []int{5, 8}
-	//arr := []int{1}
-	//arr := []int{0}
-	arr := []int{0,0,0,0,0,0,1}
-	//arr := []int{8, 1, 9}
+	// arr := []int{8, 6, 7, 1, 0, 0, 8, 9, 7, 5, 3, 6, 3, 2}
+	// arr := []int{8,6,7,1,0}
+	// arr := []int{5, 8}
+	// arr := []int{1}
+	// arr := []int{0}
+	arr := []int{0, 0, 0, 0, 0, 0, 1}
+	// arr := []int{8, 1, 9}
 	fmt.Println(largestMultipleOfThree(arr))
 
 }

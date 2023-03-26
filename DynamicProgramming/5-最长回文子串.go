@@ -18,7 +18,7 @@ func longestPalindrome(s string) string {
 			begin = i
 			maxLen = 2
 		}
-	}                        // len = 2
+	} // len = 2
 	for j := 2; j < n; j++ { // len >= 3
 		for i := 0; i <= j; i++ { // [i,j]左闭右闭区间
 			if j-i < 2 {

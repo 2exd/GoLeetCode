@@ -20,9 +20,9 @@ func constructMaximumBinaryTree(nums []int) *TreeNode {
 	}
 
 	left := findMaxIndex(nums)
-	//构造root
+	// 构造root
 	root := &TreeNode{Val: nums[left],
-		Left:  constructMaximumBinaryTree(nums[:left]), //将后续遍历一分为二，左边为左子树，右边为右子树
+		Left:  constructMaximumBinaryTree(nums[:left]), // 将后续遍历一分为二，左边为左子树，右边为右子树
 		Right: constructMaximumBinaryTree(nums[left+1:])}
 	return root
 }

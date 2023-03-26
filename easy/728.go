@@ -46,7 +46,7 @@ func selfDividingNumbers(left, right int) (ans []int) {
 时间复杂度：O(nlogright)，其中 n 是范围内的整数个数，right 是范围内的最大整数。对于范围内的每个整数，需要 O(logright) 的时间判断是否为自除数。
 空间复杂度：O(1)。除了返回值以外，使用的额外空间为 O(1)。*/
 
-//func main() {
+// func main() {
 //	//fmt.Println(selfDividingNumbers(1, 22))
 //	fmt.Println(selfDividingNumbers(47, 85))
-//}
+// }

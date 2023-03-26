@@ -1,7 +1,7 @@
 package main
 
 /*701. 二叉搜索树中的插入操作 medium*/
-//递归法
+// 递归法
 func insertIntoBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {
 		root = &TreeNode{Val: val}

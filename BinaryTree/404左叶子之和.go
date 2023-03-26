@@ -33,7 +33,7 @@ func sumOfLeftLeaves(root *TreeNode) int {
 	return res
 }
 func findLeft(root *TreeNode, res *int) {
-	//左叶子节点
+	// 左叶子节点
 	if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil {
 		*res = *res + root.Left.Val
 	}

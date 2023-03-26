@@ -45,6 +45,7 @@ func max(a, b int) int {
 	}
 	return b
 }
+
 /*复杂度分析
 时间复杂度：O(n)，其中 n 是数组 height 的长度。计算数组 leftMax 和 rightMax 的元素值各需要遍历数组 height 一次，计算能接的雨水总量还需要遍历一次。
 空间复杂度：O(n)，其中 n 是数组 height 的长度。需要创建两个长度为 nn 的数组 leftMax 和 rightMax。*/

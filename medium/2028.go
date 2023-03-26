@@ -51,7 +51,7 @@ func missingRolls(rolls []int, mean, n int) []int {
 	return ans
 }
 
-//func main() {
+// func main() {
 //	var rolls = []int{3, 5, 3}
 //	fmt.Println(missingRolls(rolls, 5, 3))
-//}
+// }

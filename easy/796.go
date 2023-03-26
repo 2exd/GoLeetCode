@@ -38,7 +38,7 @@ next:
 字符串 s + s 包含了所有 s 可以通过旋转操作得到的字符串，只需要检查 goal 是否为 s + s 的子字符串即可
 */
 func goodrotateString(s, goal string) bool {
-	//return len(s) == len(goal) && strings.Contains(s+s, goal)
+	// return len(s) == len(goal) && strings.Contains(s+s, goal)
 	b := string(append([]byte(s), s...))
 	return len(s) == len(goal) && strings.Contains(b, goal)
 }
@@ -59,11 +59,11 @@ func kmprotateString(s, goal string) bool {
 	return true
 }
 
-//func main()  {
+// func main()  {
 //	var s = "abcde"
 //	var goal = "cdeab"
 //	fmt.Println(rotateString(s,goal))
-//}
+// }
 
 // 生成 next 数组
 func generateNext(p string) []int {
@@ -119,7 +119,7 @@ func strStrV2(haystack, needle string) int {
 	if len(needle) == 0 {
 		return 0
 	}
-	//主串长度=0，或者主串长度小于子串长度
+	// 主串长度=0，或者主串长度小于子串长度
 	if len(haystack) == 0 || len(haystack) < len(needle) {
 		return -1
 	}

@@ -1,5 +1,6 @@
 package main
 
+/*416-分割等和子集*/
 // 分割等和子集 动态规划
 // 时间复杂度O(n^2) 空间复杂度O(n)
 func canPartition(nums []int) bool {

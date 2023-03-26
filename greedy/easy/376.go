@@ -36,15 +36,15 @@ func wiggleMaxLengthDynamic(nums []int) int {
 	dp[0][1] = 1
 	for i := 0; i < n; i++ {
 		for j := 0; j < i; j++ {
-			if nums[j] > nums[i] { //nums[i]为波谷
+			if nums[j] > nums[i] { // nums[i]为波谷
 				dp[i][1] = max(dp[i][1], dp[j][0]+1)
 			}
-			if nums[j] < nums[i] { //nums[i]为波峰 或者相等
+			if nums[j] < nums[i] { // nums[i]为波峰 或者相等
 				dp[i][0] = max(dp[i][0], dp[j][1]+1)
 			}
-			if nums[j] == nums[i] { //添加一种情况，nums[i]为相等
-				dp[i][0] = max(dp[i][0], dp[j][0]) //波峰
-				dp[i][1] = max(dp[i][1], dp[j][1]) //波谷
+			if nums[j] == nums[i] { // 添加一种情况，nums[i]为相等
+				dp[i][0] = max(dp[i][0], dp[j][0]) // 波峰
+				dp[i][1] = max(dp[i][1], dp[j][1]) // 波谷
 			}
 		}
 	}

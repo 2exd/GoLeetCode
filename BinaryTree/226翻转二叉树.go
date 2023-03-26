@@ -6,7 +6,7 @@ func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	root.Left, root.Right = root.Right, root.Left //交换
+	root.Left, root.Right = root.Right, root.Left // 交换
 
 	invertTree(root.Left)
 	invertTree(root.Right)
@@ -19,7 +19,7 @@ func invertTreeStack(root *TreeNode) *TreeNode {
 	node := root
 	for node != nil || len(stack) > 0 {
 		for node != nil {
-			node.Left, node.Right = node.Right, node.Left //交换
+			node.Left, node.Right = node.Right, node.Left // 交换
 			stack = append(stack, node)
 			node = node.Left
 		}

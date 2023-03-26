@@ -1,7 +1,7 @@
 package main
 
 /*700. 二叉搜索树中的搜索 easy*/
-//递归法
+// 递归法
 func searchBST(root *TreeNode, val int) *TreeNode {
 	if root == nil || root.Val == val {
 		return root
@@ -12,7 +12,7 @@ func searchBST(root *TreeNode, val int) *TreeNode {
 	return searchBST(root.Right, val)
 }
 
-//迭代法
+// 迭代法
 func searchBSTIteration(root *TreeNode, val int) *TreeNode {
 	for root != nil {
 		if root.Val > val {

@@ -7,9 +7,9 @@ import "fmt"
 小美找到了你。你可以将字符串中至多两个位置改为任意小写英文字符 'a'-'z'
 你的任务是帮助小美在当前制约下，获得字典序最小的回文字符串。
 */
-func main() {
-	huiwen()
-}
+// func main() {
+// 	huiwen()
+// }
 
 func huiwen() {
 	var str string

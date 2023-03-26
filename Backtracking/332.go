@@ -34,7 +34,7 @@ func findItinerary(tickets [][]string) []string {
 		targets[ticket[0]] = append(targets[ticket[0]], &pair{ticket[1], false})
 	}
 
-	for k, _ := range targets {
+	for k := range targets {
 		sort.Sort(targets[k])
 	}
 

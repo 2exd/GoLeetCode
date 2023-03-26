@@ -2,6 +2,7 @@ package main
 
 import "math"
 
+/*494-目标和*/
 func findTargetSumWays(nums []int, target int) int {
 	// `+` 的元素和为 x，`-` 的元素和为 sum-x =>  x - (sum - x) = target => x = (target + sum) / 2
 	sum := 0

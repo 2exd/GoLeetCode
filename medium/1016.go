@@ -4,9 +4,8 @@ import (
 	"strings"
 )
 
-
 /*1016. 子串能表示从 1 到 N 数字的二进制串*/
-//func getBi(a int) (res string) {
+// func getBi(a int) (res string) {
 //	if a == 0 {
 //		return "0"
 //	}
@@ -19,9 +18,9 @@ import (
 //		a >>= 1
 //	}
 //	return res
-//}
+// }
 
-//func getBi(a int)  string {
+// func getBi(a int)  string {
 //	var builder strings.Builder
 //	if a == 0 {
 //		return "0"
@@ -37,20 +36,20 @@ import (
 //		a >>= 1
 //	}
 //	return builder.String()
-//}
+// }
 
-func getBi(a int)  string {
-	buf:=make([]byte,0)
+func getBi(a int) string {
+	buf := make([]byte, 0)
 	if a == 0 {
 		return "0"
 	}
 	for a > 0 {
 		if a&1 == 1 {
-			//res = "1" + res
-			buf = append([]byte{'1'},buf...)
+			// res = "1" + res
+			buf = append([]byte{'1'}, buf...)
 		} else {
-			//res = "0" + res
-			buf = append([]byte{'0'},buf...)
+			// res = "0" + res
+			buf = append([]byte{'0'}, buf...)
 		}
 		a >>= 1
 	}
@@ -69,6 +68,7 @@ func queryString(s string, n int) bool {
 	}
 	return true
 }
+
 /*
 题目的入参范围看起来很大，n可以达到1e9，即使用高效的字符串匹配O(mn)下时间复杂度也达到了1e12。
 但是实际上我们可以发现由于待匹配的子串是连续的，即使存在一些子串能相互复用一部分，粗略估计一下

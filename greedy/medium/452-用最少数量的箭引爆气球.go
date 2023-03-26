@@ -4,7 +4,7 @@ import "sort"
 
 func findMinArrowShots(points [][]int) int {
 	// number of arrows
-	var res int = 1
+	var res = 1
 	// order by X start position
 	sort.Slice(points, func(i, j int) bool {
 		return points[i][0] < points[j][0]

@@ -34,7 +34,7 @@ func totalFruit(fruits []int) int {
 	}
 }
 
-//func main() {
+// func main() {
 //	nums := []int{0, 1, 2, 2}
 //	totalFruit(nums)
-//}
+// }

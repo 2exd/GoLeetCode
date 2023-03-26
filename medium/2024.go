@@ -60,11 +60,11 @@ func max(a, b int) int {
 时间复杂度：O(n)，其中 n 为字符串长度，我们只需要遍历该字符串两次。
 空间复杂度：O(1)，我们只需要常数的空间保存若干变量。。*/
 
-//func main()  {
+// func main()  {
 //
 //	var a byte = 'T'
 //	fmt.Printf("%d %T\n", a, a)
 //
 //	var b rune='F'
 //	fmt.Printf("%d %T\n", b, b)
-//}
+// }

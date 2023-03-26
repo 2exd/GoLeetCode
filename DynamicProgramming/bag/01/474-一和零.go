@@ -1,9 +1,10 @@
 package main
 
+/*474-一和零*/
 func findMaxForm(strs []string, m int, n int) int {
 	// 定义数组
 	dp := make([][]int, m+1)
-	for i, _ := range dp {
+	for i := range dp {
 		dp[i] = make([]int, n+1)
 	}
 	// 遍历

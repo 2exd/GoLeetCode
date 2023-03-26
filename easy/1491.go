@@ -9,13 +9,13 @@ func average(salary []int) float64 {
 		for i := 1; i < len(arr)-1; i++ {
 			sum += arr[i]
 		}
-		return float64(sum) / float64((len(arr) - 2))
+		return float64(sum) / float64(len(arr) - 2)
 	}
 
 	// 堆排序
-	//var HeapSort func([]int) []int
-	//var HeapSortMax func ([]int, int) []int
-	//HeapSortMax = func(arr []int, length int) []int {
+	// var HeapSort func([]int) []int
+	// var HeapSortMax func ([]int, int) []int
+	// HeapSortMax = func(arr []int, length int) []int {
 	//	// length := len(arr)
 	//	if length <= 1 {
 	//		return arr
@@ -36,9 +36,9 @@ func average(salary []int) float64 {
 	//		}
 	//	}
 	//	return arr
-	//}
+	// }
 	//
-	//HeapSort = func(arr []int) []int {
+	// HeapSort = func(arr []int) []int {
 	//	length := len(arr)
 	//	for i := 0; i < length; i++ {
 	//		lastlen := length - i
@@ -49,15 +49,15 @@ func average(salary []int) float64 {
 	//		}
 	//	}
 	//	return arr
-	//}
-	//return	computeAver(HeapSort(salary))
+	// }
+	// return	computeAver(HeapSort(salary))
 
 	// 快速排序
-	//var QuickSort func(arr []int) []int
-	//QuickSort = func(arr []int) []int {
+	// var QuickSort func(arr []int) []int
+	// QuickSort = func(arr []int) []int {
 	//	if len(arr) <= 1 {
 	//	return arr
-	//}
+	// }
 	//	splitdata := arr[0]          //第一个数据
 	//	low := make([]int, 0, 0)     //比我小的数据
 	//	hight := make([]int, 0, 0)   //比我大的数据
@@ -68,23 +68,23 @@ func average(salary []int) float64 {
 	//	if arr[i] < splitdata {
 	//	// 加入low
 	//	low = append(low, arr[i])
-	//} else if arr[i] > splitdata {
+	// } else if arr[i] > splitdata {
 	//	// 加入height
 	//	hight = append(hight, arr[i])
-	//} else {
+	// } else {
 	//	// 加入mid
 	//	mid = append(mid, arr[i])
-	//}
-	//}
+	// }
+	// }
 	//	low, hight = QuickSort(low), quickSort(hight)
 	//	myarr := append(append(low, mid...), hight...)
 	//	return myarr
-	//}
-	//return	computeAver(QuickSort(salary))
+	// }
+	// return	computeAver(QuickSort(salary))
 
 	// 冒泡排序
-	//var BubbleSort func([]int) []int
-	//BubbleSort = func(arr []int) []int {
+	// var BubbleSort func([]int) []int
+	// BubbleSort = func(arr []int) []int {
 	//	for i := 0; i < len(arr); i++ {
 	//		for j := i + 1; j < len(arr); j++ {
 	//			if arr[i] > arr[j] {
@@ -93,14 +93,14 @@ func average(salary []int) float64 {
 	//		}
 	//	}
 	//	return arr
-	//}
-	//return	computeAver(BubbleSort(salary))
+	// }
+	// return	computeAver(BubbleSort(salary))
 
 	// 基数排序
 
 	// 选择排序
-	//var SelectSort func ([]int) []int
-	//SelectSort = func (arr []int) []int{
+	// var SelectSort func ([]int) []int
+	// SelectSort = func (arr []int) []int{
 	//	length := len(arr)
 	//	fmt.Println(length)
 	//	if length <= 1 {
@@ -118,31 +118,31 @@ func average(salary []int) float64 {
 	//		}
 	//	}
 	//	return arr
-	//}
-	//selectsort := SelectSort(salary)
-	//fmt.Println(SelectSort(selectsort))
+	// }
+	// selectsort := SelectSort(salary)
+	// fmt.Println(SelectSort(selectsort))
 	//
-	//return	computeAver(SelectSort(salary))
+	// return	computeAver(SelectSort(salary))
 
 	// 基数排序
-	//var RadixSort func (arr []int) []int
-	//var CountingSrot func(arr []int, loc int)
-	//var digit func(num int, loc int) int
-	//RadixSort = func (arr []int) []int {
+	// var RadixSort func (arr []int) []int
+	// var CountingSrot func(arr []int, loc int)
+	// var digit func(num int, loc int) int
+	// RadixSort = func (arr []int) []int {
 	//	maxValueLen := 0 // 需要循环多少次，以最大数字为准
 	//	for i := 0; i < len(arr); i++ {
 	//	n := len(strconv.Itoa(arr[i])) // 方便起见，数字转字符，再取长度
 	//	if n > maxValueLen {
 	//	maxValueLen = n
-	//}
-	//}
+	// }
+	// }
 	//	for loc := 1; loc <= maxValueLen; loc++ {
 	//		CountingSrot(arr, loc)
-	//}
+	// }
 	//	return arr
-	//}
+	// }
 	//
-	//CountingSrot = func (arr []int, loc int) {
+	// CountingSrot = func (arr []int, loc int) {
 	//	bucket := make([][]int, 10) // 0~9 总共10个队列
 	//
 	//	for i := 0; i < len(arr); i++ {
@@ -162,17 +162,17 @@ func average(salary []int) float64 {
 	//			idx++
 	//		}
 	//	}
-	//}
+	// }
 	//
-	//// 数字，右数第几位，从1开始
-	//digit = func(num int, loc int) int {
+	// // 数字，右数第几位，从1开始
+	// digit = func(num int, loc int) int {
 	//	return num % int(math.Pow10(loc)) / int(math.Pow10(loc-1))
-	//}
+	// }
 	//
-	//return	computeAver(RadixSort(salary))
+	// return	computeAver(RadixSort(salary))
 
 	// 归并排序
-	//var merge = func (arr []int, start, mid, end int) {
+	// var merge = func (arr []int, start, mid, end int) {
 	//	var tmparr = []int{}
 	//	var s1, s2 = start, mid+1
 	//	for s1<= mid && s2<= end{
@@ -193,9 +193,9 @@ func average(salary []int) float64 {
 	//	for pos,item:=range tmparr{
 	//		arr[start + pos] = item
 	//	}
-	//}
-	//var MergeSort func (arr []int, start, end int)
-	//MergeSort = func (arr []int, start, end int){
+	// }
+	// var MergeSort func (arr []int, start, end int)
+	// MergeSort = func (arr []int, start, end int){
 	//	if start >= end {
 	//		return
 	//	}
@@ -203,46 +203,46 @@ func average(salary []int) float64 {
 	//	MergeSort(arr, start, mid)
 	//	MergeSort(arr, mid+1, end)
 	//	merge(arr, start, mid, end)
-	//}
-	//MergeSort(salary, 0, len(salary)-1)
-	//return computeAver(salary)
+	// }
+	// MergeSort(salary, 0, len(salary)-1)
+	// return computeAver(salary)
 
 	// 插入排序
-	//var InsertSort func(st []int) []int
-	//InsertSort = func(st []int) []int {
+	// var InsertSort func(st []int) []int
+	// InsertSort = func(st []int) []int {
 	//	if len(st) <= 1 {
 	//	return st
-	//}
+	// }
 	//	for i := 1; i < len(st); i++ {
 	//	back := st[i]
 	//	j := i - 1
 	//	for j >= 0 && back < st[j] {
 	//	st[j+1] = st[j]
 	//	j--
-	//}
+	// }
 	//	st[j+1] = back
-	//}
+	// }
 	//	return st
-	//}
-	//return computeAver(InsertSort(salary))
+	// }
+	// return computeAver(InsertSort(salary))
 
 	// 希尔排序
 	var ShellSort = func(num []int) {
 
-		//increment相隔数量
+		// increment相隔数量
 		for increment := len(num) / 2; increment > 0; increment /= 2 {
-			//i序号较大的数组下标，i ,j进行比较
+			// i序号较大的数组下标，i ,j进行比较
 
 			for i := increment; i < len(num); i++ {
-				//进行交换
+				// 进行交换
 				temp := num[i]
-				//按照increment，数组从j到0进行交换比较
+				// 按照increment，数组从j到0进行交换比较
 				for j := i - increment; j >= 0; j -= increment {
 					if temp < num[j] {
 						num[j+increment] = num[j]
 						num[j] = temp
 						temp = num[j]
-					} else { //由于数组前面按照increment已经排好序，如果temp>num[j],则不必继续比较交换下去
+					} else { // 由于数组前面按照increment已经排好序，如果temp>num[j],则不必继续比较交换下去
 						break
 					}
 				}
@@ -255,9 +255,9 @@ func average(salary []int) float64 {
 	return computeAver(salary)
 }
 
-//func main()  {
+// func main()  {
 //	//arr := []int{1, 9, 10, 30, 2, 5, 45, 8, 63, 234, 12}
 //	//arr := []int{48000,59000,99000,13000,78000,45000,31000,17000,39000,37000,93000,77000,33000,28000,4000,54000,67000,6000,1000,11000}
 //	arr := []int{4000,3000,1000,2000}
 //	fmt.Println(average(arr))
-//}
+// }

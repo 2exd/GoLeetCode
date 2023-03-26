@@ -1,8 +1,8 @@
 package main
 
 import (
-"fmt"
-"math"
+	"fmt"
+	"math"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	fmt.Printf("Uint32的最大值是:%d\n", math.MaxUint32)
 	fmt.Printf("Int64的最大值是:%d\n", math.MaxInt64)
 	fmt.Printf("Int64的最小值是:%d\n", math.MinInt64)
-	//fmt.Println("Uint64的最大值是:", math.MaxUint64)
+	// fmt.Println("Uint64的最大值是:", math.MaxUint64)
 	fmt.Printf("圆周率默认为:%.200f\n", math.Pi)
 
 }

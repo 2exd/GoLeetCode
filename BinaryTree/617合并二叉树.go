@@ -14,7 +14,7 @@ func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode {
 		return nil
 	}
 
-	//构造root
+	// 构造root
 	root := &TreeNode{Val: root1.Val + root2.Val,
 		Left:  mergeTrees(root1.Left, root2.Left),
 		Right: mergeTrees(root1.Right, root2.Right)}

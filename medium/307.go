@@ -6,12 +6,12 @@ package main
 分块处理
 */
 
-//type NumArray struct {
+// type NumArray struct {
 //	nums, sums []int // sums[i] 表示第 i 个块的元素和
 //	size       int   // 块的大小
-//}
+// }
 //
-//func Constructor(nums []int) NumArray {
+// func Constructor(nums []int) NumArray {
 //	n := len(nums)
 //	size := int(math.Sqrt(float64(n)))
 //	sums := make([]int, (n+size-1)/size) // n/size 向上取整
@@ -19,15 +19,15 @@ package main
 //		sums[i/size] += num
 //	}
 //	return NumArray{nums, sums, size}
-//}
+// }
 //
-//func (na *NumArray) Update(index, val int) {
+// func (na *NumArray) Update(index, val int) {
 //	// 更新块的sum
 //	na.sums[index/na.size] += val - na.nums[index]
 //	na.nums[index] = val
-//}
+// }
 //
-//func (na *NumArray) SumRange(left, right int) (ans int) {
+// func (na *NumArray) SumRange(left, right int) (ans int) {
 //	size := na.size
 //	b1, b2 := left/size, right/size
 //	if b1 == b2 { // 区间 [left, right] 在同一块中
@@ -46,27 +46,26 @@ package main
 //		ans += na.nums[i]
 //	}
 //	return
-//}
+// }
 /*复杂度分析
 时间复杂度：构造函数为 O(n)，update 函数为 O(1)，sumRange 函数为 O(\sqrt n)，
 其中 n 为数组 nums 的大小。对于 sumRange 函数，我们最多遍历两个块以及 sum 数组，因此时间复杂度为 O(\sqrt n)。
 空间复杂度：O(\sqrt n)。保存 sum 数组需要 O(\sqrt n)的空间。*/
 
-
 /*线段树*/
 
-//type NumArray []int
+// type NumArray []int
 //
-//func Constructor(nums []int) NumArray {
+// func Constructor(nums []int) NumArray {
 //	n := len(nums)
 //	seg := make(NumArray, n*4)
 //	seg.build(nums, 0, 0, n-1)
 //	return seg
-//}
+// }
 //
 //
-//// 构建完全二叉树
-//func (seg NumArray) build(nums []int, node, s, e int) {
+// // 构建完全二叉树
+// func (seg NumArray) build(nums []int, node, s, e int) {
 //	// 叶子结点, 为单位区间
 //	if s == e {
 //		seg[node] = nums[s]
@@ -77,9 +76,9 @@ package main
 //	seg.build(nums, node*2+1, s, m)// 左孩子区间为node*2+1
 //	seg.build(nums, node*2+2, m+1, e)// 右孩子区间为node*2+2
 //	seg[node] = seg[node*2+1] + seg[node*2+2]
-//}
+// }
 //
-//func (seg NumArray) change(index, val, node, s, e int) {
+// func (seg NumArray) change(index, val, node, s, e int) {
 //	if s == e {
 //		seg[node] = val// 修改
 //		return
@@ -91,9 +90,9 @@ package main
 //		seg.change(index, val, node*2+2, m+1, e)
 //	}
 //	seg[node] = seg[node*2+1] + seg[node*2+2]// 更新
-//}
+// }
 //
-//func (seg NumArray) range_(left, right, node, s, e int) int {
+// func (seg NumArray) range_(left, right, node, s, e int) int {
 //	if left == s && right == e {
 //		return seg[node]
 //	}
@@ -105,15 +104,15 @@ package main
 //		return seg.range_(left, right, node*2+2, m+1, e)
 //	}
 //	return seg.range_(left, m, node*2+1, s, m) + seg.range_(m+1, right, node*2+2, m+1, e)
-//}
+// }
 //
-//func (seg NumArray) Update(index, val int) {
+// func (seg NumArray) Update(index, val int) {
 //	seg.change(index, val, 0, 0, len(seg)/4-1)
-//}
+// }
 //
-//func (seg NumArray) SumRange(left, right int) int {
+// func (seg NumArray) SumRange(left, right int) int {
 //	return seg.range_(left, right, 0, 0, len(seg)/4-1)
-//}
+// }
 
 /*复杂度分析
 时间复杂度：
@@ -156,10 +155,9 @@ func (na *NumArray) prefixSum(index int) (sum int) {
 }
 
 func (na *NumArray) Update(index, val int) {
-	na.add(index+1, val-na.nums[index])// 更新sum值
+	na.add(index+1, val-na.nums[index]) // 更新sum值
 	na.nums[index] = val
 }
-
 
 func (na *NumArray) SumRange(left, right int) int {
 	// 到right的sum - 到left-1的sum
