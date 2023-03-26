@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*42. 接雨水*/
 
 /*维护一个单调栈，单调栈存储的是下标，满足从栈底到栈顶的下标对应的数组 height 中的元素递减。*/
@@ -40,8 +38,8 @@ func min(a, b int) int {
 时间复杂度：O(n)，其中 n 是数组 height 的长度。从 0 到 n-1 的每个下标最多只会入栈和出栈各一次。
 空间复杂度：O(n)，其中 n 是数组 height 的长度。空间复杂度主要取决于栈空间，栈的大小不会超过 n。*/
 
-func main()  {
-
-	height := []int{0,1,0,2,1,0,1,3,2,1,2,1}
-	fmt.Println(trap(height))
-}
+// func main()  {
+//
+// 	height := []int{0,1,0,2,1,0,1,3,2,1,2,1}
+// 	fmt.Println(trap(height))
+// }
