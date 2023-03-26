@@ -25,11 +25,11 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	return dp[m-1][n-1]
 }
 
-func main() {
-	uniquePathsWithObstacles(
-		[][]int{
-			{0, 0, 0},
-			{0, 1, 0},
-			{0, 0, 0},
-		})
-}
+// func main() {
+// 	uniquePathsWithObstacles(
+// 		[][]int{
+// 			{0, 0, 0},
+// 			{0, 1, 0},
+// 			{0, 0, 0},
+// 		})
+// }

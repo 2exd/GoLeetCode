@@ -11,11 +11,9 @@ func canPartition(nums []int) bool {
 	if sum%2 == 1 {
 		return false
 	}
-
 	target := sum / 2
-
+	// 背包最大容量为 target
 	dp := make([]int, target+1)
-
 	for _, num := range nums {
 		for j := target; j >= num; j-- {
 			if dp[j] < dp[j-num]+num {
