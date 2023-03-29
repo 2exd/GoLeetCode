@@ -1,11 +1,5 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
-
 /*
 题目描述
 	小红拿到了棵树，每个节点被染成了红色或者蓝色。
@@ -55,34 +49,34 @@ func dfs(u int, parent int, nodes []node, red, blue []int, ans *int) {
 	*ans += abs(red[u] - blue[u])
 }
 
-func main() {
-	var n int
-	fmt.Scanln(&n)
-
-	nodes := make([]node, n)
-	colors := make([]byte, n)
-	for i := 0; i < n; i++ {
-		fmt.Scanf("%c", &colors[i])
-		nodes[i].color = colors[i]
-	}
-	scanner := bufio.NewScanner(os.Stdin)
-	// 返回每个以空格分隔的文本单词，并删除周围的空格
-	scanner.Split(bufio.ScanWords)
-	for i := 0; i < n-1; i++ {
-		var u, v int
-		scanner.Scan()
-		fmt.Sscan(scanner.Text(), &u)
-		scanner.Scan()
-		fmt.Sscan(scanner.Text(), &v)
-		u--
-		v--
-		nodes[u].edges = append(nodes[u].edges, v)
-		nodes[v].edges = append(nodes[v].edges, u)
-	}
-
-	red := make([]int, n)
-	blue := make([]int, n)
-	ans := 0
-	dfs(0, -1, nodes, red, blue, &ans)
-	fmt.Println(ans)
-}
+// func main() {
+// 	var n int
+// 	fmt.Scanln(&n)
+//
+// 	nodes := make([]node, n)
+// 	colors := make([]byte, n)
+// 	for i := 0; i < n; i++ {
+// 		fmt.Scanf("%c", &colors[i])
+// 		nodes[i].color = colors[i]
+// 	}
+// 	scanner := bufio.NewScanner(os.Stdin)
+// 	// 返回每个以空格分隔的文本单词，并删除周围的空格
+// 	scanner.Split(bufio.ScanWords)
+// 	for i := 0; i < n-1; i++ {
+// 		var u, v int
+// 		scanner.Scan()
+// 		fmt.Sscan(scanner.Text(), &u)
+// 		scanner.Scan()
+// 		fmt.Sscan(scanner.Text(), &v)
+// 		u--
+// 		v--
+// 		nodes[u].edges = append(nodes[u].edges, v)
+// 		nodes[v].edges = append(nodes[v].edges, u)
+// 	}
+//
+// 	red := make([]int, n)
+// // 	blue := make([]int, n)
+// 	ans := 0
+// 	dfs(0, -1, nodes, red, blue, &ans)
+// 	fmt.Println(ans)
+// }
