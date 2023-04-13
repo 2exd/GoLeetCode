@@ -1,22 +1,20 @@
 package main
 
-import "fmt"
-
 var (
 	path4  []int
 	res4   int
 	input4 int
 )
 
-func main() {
-	fmt.Scan(&input4)
-	nums := make([]int, input4)
-	for i := 0; i < input4; i++ {
-		fmt.Scan(&nums[i])
-	}
-	// fmt.Print("4")
-	fmt.Printf("%d\n", solution4(nums))
-}
+// func main() {
+// 	fmt.Scan(&input4)
+// 	nums := make([]int, input4)
+// 	for i := 0; i < input4; i++ {
+// 		fmt.Scan(&nums[i])
+// 	}
+// 	// fmt.Print("4")
+// 	fmt.Printf("%d\n", solution4(nums))
+// }
 
 func solution4(nums []int) int {
 	if input4 == 0 {

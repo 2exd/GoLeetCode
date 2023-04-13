@@ -1,5 +1,11 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
 /*
 题目描述：
 	我们定义一棵树是好树当且仅当它的红色节点数量大于蓝色节点数量。
@@ -52,39 +58,39 @@ func dfs(u int, parent int, nodes []node, red, blue []int, ans *int) {
 	}
 }
 
-// func main() {
-// 	var n int
-// 	fmt.Scanln(&n)
-//
-// 	nodes := make([]node, n)
-// 	colors := make([]byte, n)
-// 	for i := 0; i < n; i++ {
-// 		fmt.Scanf("%c", &colors[i])
-// 		if colors[i] == 'R' {
-// 			numRed++
-// 		} else {
-// 			numBlue++
-// 		}
-// 		nodes[i].color = colors[i]
-// 	}
-// 	scanner := bufio.NewScanner(os.Stdin)
-// 	// 返回每个以空格分隔的文本单词，并删除周围的空格
-// 	scanner.Split(bufio.ScanWords)
-// 	for i := 0; i < n-1; i++ {
-// 		var u, v int
-// 		scanner.Scan()
-// 		fmt.Sscan(scanner.Text(), &u)
-// 		scanner.Scan()
-// 		fmt.Sscan(scanner.Text(), &v)
-// 		u--
-// 		v--
-// 		nodes[u].edges = append(nodes[u].edges, v)
-// 		nodes[v].edges = append(nodes[v].edges, u)
-// 	}
-//
-// 	red := make([]int, n)
-// 	blue := make([]int, n)
-// 	ans := 0
-// 	dfs(0, -1, nodes, red, blue, &ans)
-// 	fmt.Println(ans)
-// }
+func main() {
+	var n int
+	fmt.Scanln(&n)
+
+	nodes := make([]node, n)
+	colors := make([]byte, n)
+	for i := 0; i < n; i++ {
+		fmt.Scanf("%c", &colors[i])
+		if colors[i] == 'R' {
+			numRed++
+		} else {
+			numBlue++
+		}
+		nodes[i].color = colors[i]
+	}
+	scanner := bufio.NewScanner(os.Stdin)
+	// 返回每个以空格分隔的文本单词，并删除周围的空格
+	scanner.Split(bufio.ScanWords)
+	for i := 0; i < n-1; i++ {
+		var u, v int
+		scanner.Scan()
+		fmt.Sscan(scanner.Text(), &u)
+		scanner.Scan()
+		fmt.Sscan(scanner.Text(), &v)
+		u--
+		v--
+		nodes[u].edges = append(nodes[u].edges, v)
+		nodes[v].edges = append(nodes[v].edges, u)
+	}
+
+	red := make([]int, n)
+	blue := make([]int, n)
+	ans := 0
+	dfs(0, -1, nodes, red, blue, &ans)
+	fmt.Println(ans)
+}

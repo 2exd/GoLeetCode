@@ -1,23 +1,21 @@
 package main
 
-import "fmt"
-
 var (
 	path5     []int
 	count5    int
 	input5, k int
 )
 
-func main() {
-	fmt.Scan(&input5, &k)
-	nums := make([]int, input5)
-	for i := 0; i < input5; i++ {
-		fmt.Scan(&nums[i])
-	}
-	// fmt.Print("4")
-	solution5(nums)
-	fmt.Print(count5)
-}
+// func main() {
+// 	fmt.Scan(&input5, &k)
+// 	nums := make([]int, input5)
+// 	for i := 0; i < input5; i++ {
+// 		fmt.Scan(&nums[i])
+// 	}
+// 	// fmt.Print("4")
+// 	solution5(nums)
+// 	fmt.Print(count5)
+// }
 func solution5(nums []int) {
 	if input5 == 0 {
 		return
