@@ -3,25 +3,25 @@ package main
 /*33-搜索旋转排序数组*/
 
 func search(nums []int, target int) int {
-	l := len(nums) - 1
-
-	if target < nums[0] && target > nums[l] {
+	isBlue := func(i int) bool {
+		end := nums[len(nums)-1]
+		if nums[i] > end {
+			return target > end && nums[i] >= target
+		} else {
+			return target > end || nums[i] >= target
+		}
+	}
+	left, right := -1, len(nums) // 开区间 (-1, n-1)
+	for left+1 < right {         // 开区间不为空
+		mid := left + (right-left)/2
+		if isBlue(mid) { // 蓝色
+			right = mid
+		} else { // 红色
+			left = mid
+		}
+	}
+	if right == len(nums) || nums[right] != target {
 		return -1
 	}
-
-	if target >= nums[0] {
-		for i := 0; i <= l; i++ {
-			if nums[i] == target {
-				return i
-			}
-		}
-	} else {
-		for i := l; i >= 0; i++ {
-			if nums[i] == target {
-				return i
-			}
-		}
-	}
-
-	return -1
+	return right
 }

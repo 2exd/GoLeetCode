@@ -10,7 +10,8 @@ import (
 ① 密码串严格小于6: 替换字符和删除字符没有意义，直接返回应该增添的字符数量
 ② 密码串在6-20: 删除和添加字符没有意义，考虑替换操作
 ③ 密码串大于20: 只有删除或者替换操作，先考虑删除字符串，使得长度在20以内，
-再替换三个连续的字符串*/
+再替换三个连续的字符串
+*/
 func strongPasswordChecker(password string) int {
 	hasLower, hasUpper, hasDigit := 0, 0, 0
 	for _, ch := range password {

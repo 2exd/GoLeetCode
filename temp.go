@@ -1,23 +1,26 @@
 package main
 
-func nextGreaterElements(nums []int) []int {
-	res := make([]int, len(nums))
-	m := make(map[int]int, 0)
-	stack := make([]int, len(nums))
-	for i, num := range nums {
-		for len(stack) != 0 && num > nums[stack[len(stack)-1]] {
-			top := stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
-			m[nums[top]] = num
-		}
-		stack = append(stack, i)
+func lastStoneWeightII(stones []int) int {
+	dp := make([]int, 15001)
+
+	sum := 0
+	for _, stone := range stones {
+		sum += stone
 	}
-	for i, num := range nums {
-		if m[num] != 0 {
-			res[i] = m[num]
-		} else {
-			res[i] = -1
+
+	target := sum / 2
+
+	for i := 1; i < len(stones); i++ {
+		for j := target; j >= stones[i]; j-- {
+			dp[j] = max(dp[j], dp[j-stones[i]]+stones[i])
 		}
 	}
-	return res
+	return sum
+}
+
+func max(a, b int) int {
+	if a < b {
+		return b
+	}
+	return a
 }
