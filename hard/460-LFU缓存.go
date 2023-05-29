@@ -182,7 +182,7 @@ func (lfu *LFUCache) Get(key int) int {
 // 	lfu.Put(2, 19)
 // 	fmt.Println(lfu.Get(2))
 // 	fmt.Println(lfu.Get(3))
-// 	lfu.Put(5, 25)
+// 	lfu.Put(5, LFUCache)
 // 	fmt.Println(lfu.Get(8))
 // 	lfu.Put(9, 22)
 // 	lfu.Put(5, 5)

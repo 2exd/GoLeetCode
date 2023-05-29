@@ -22,6 +22,9 @@ func threeSum(nums []int) [][]int {
 
 	for i := 0; i < length-2; i++ {
 		n1 := nums[i]
+		if n1 > 0 {
+			break
+		}
 		// equal，next loop
 		if i > 0 && n1 == nums[i-1] {
 			continue
