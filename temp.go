@@ -1,26 +1,28 @@
 package main
 
-func lastStoneWeightII(stones []int) int {
-	dp := make([]int, 15001)
-
-	sum := 0
-	for _, stone := range stones {
-		sum += stone
+func lengthOfLIS(nums []int) int {
+	if len(nums) <= 1 {
+		return len(nums)
 	}
+	stack := []int{nums[0]}
 
-	target := sum / 2
-
-	for i := 1; i < len(stones); i++ {
-		for j := target; j >= stones[i]; j-- {
-			dp[j] = max(dp[j], dp[j-stones[i]]+stones[i])
+	for i := 1; i < len(nums); i++ {
+		// 大于栈顶，添加
+		if nums[i] > stack[len(stack)-1] {
+			stack = append(stack, nums[i])
+		} else if nums[i] < stack[len(stack)-1] {
+			// 小于等于栈顶，二分查找
+			left, right := 0, len(stack)-1
+			for left < right {
+				mid := (left + right) / 2
+				if nums[i] <= stack[mid] {
+					right = mid
+				} else {
+					left = mid + 1
+				}
+			}
+			stack[left] = nums[i]
 		}
 	}
-	return sum
-}
-
-func max(a, b int) int {
-	if a < b {
-		return b
-	}
-	return a
+	return len(stack)
 }

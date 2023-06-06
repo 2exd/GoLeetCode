@@ -3,11 +3,15 @@ package main
 /*20. 有效的括号 easy*/
 
 func isValid(s string) bool {
-	hash := map[byte]byte{')': '(', ']': '[', '}': '{'}
-	stack := make([]byte, 0)
 	if s == "" {
 		return true
 	}
+	n := len(s)
+	if n%2 == 1 {
+		return false
+	}
+	hash := map[byte]byte{')': '(', ']': '[', '}': '{'}
+	stack := make([]byte, 0)
 
 	for _, v := range s {
 		if v == '{' || v == '(' || v == '[' {
