@@ -15,15 +15,15 @@ import (
 // 时间复杂度：O(nlogk)
 // 空间复杂度：O(n)
 func topKFrequent(nums []int, k int) []int {
-	map_num := map[int]int{}
+	mapNum := map[int]int{}
 	// 记录每个元素出现的次数
 	for _, item := range nums {
-		map_num[item]++
+		mapNum[item]++
 	}
 	h := &IHeap{}
 	heap.Init(h)
 	// 所有元素入堆，堆的长度为k
-	for key, value := range map_num {
+	for key, value := range mapNum {
 		heap.Push(h, [2]int{key, value})
 		if h.Len() > k {
 			heap.Pop(h)

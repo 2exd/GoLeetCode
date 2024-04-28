@@ -1,9 +1,6 @@
 package main
 
 /*3. 无重复字符的最长子串*/
-func main() {
-
-}
 
 func max3(x int, y int) int {
 	if x > y {
