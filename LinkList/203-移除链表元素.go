@@ -8,9 +8,10 @@ package main
  * }
  */
 func removeElements(head *ListNode, val int) *ListNode {
-	dummyHead := &ListNode{}
-	dummyHead.Next = head
-	cur := dummyHead
+	dummy := &ListNode{Next: head}
+
+	cur := dummy
+
 	for cur != nil && cur.Next != nil {
 		if cur.Next.Val == val {
 			cur.Next = cur.Next.Next
@@ -18,10 +19,6 @@ func removeElements(head *ListNode, val int) *ListNode {
 			cur = cur.Next
 		}
 	}
-	return dummyHead.Next
-}
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
+	return dummy.Next
 }

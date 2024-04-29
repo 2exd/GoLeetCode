@@ -19,7 +19,7 @@ func initDLinkList(value, key int) *DLinkListNode {
 	}
 }
 
-func Constructor(capacity int) LRUCache {
+func Constructor146(capacity int) LRUCache {
 	l := LRUCache{
 		capacity: capacity,
 		size:     0,
@@ -102,7 +102,7 @@ func (this *LRUCache) removeTail() *DLinkListNode {
 }
 
 // func main() {
-// 	lRUCache := Constructor(2)
+// 	lRUCache := Constructor146(2)
 // 	lRUCache.Put(1, 1)           // 缓存是 {1=1}
 // 	lRUCache.Put(2, 2)           // 缓存是 {1=1, 2=2}
 // 	fmt.Println(lRUCache.Get(1)) // 返回 1
@@ -116,7 +116,7 @@ func (this *LRUCache) removeTail() *DLinkListNode {
 
 /**
  * Your LRUCache object will be instantiated and called as such:
- * obj := Constructor(capacity);
+ * obj := Constructor146(capacity);
  * param_1 := obj.Get(key);
  * obj.Put(key,value);
  */

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*148-排序链表*/
 func merge(head1, head2 *ListNode) *ListNode {
 	dummyHead := &ListNode{}
@@ -60,10 +58,11 @@ func Increase() func() int {
 		return n
 	}
 }
-func main() {
-	i1 := Increase()
-	i2 := Increase()
-	fmt.Println(i1())
-	fmt.Println(i1())
-	fmt.Println(i2())
-}
+
+// func main() {
+// 	i1 := Increase()
+// 	i2 := Increase()
+// 	fmt.Println(i1())
+// 	fmt.Println(i1())
+// 	fmt.Println(i2())
+// }

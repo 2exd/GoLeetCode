@@ -1,6 +1,6 @@
 package main
 
-/*24. 两两交换链表中的节点 medium*/
+/*24-两两交换链表中的节点 medium*/
 func swapPairs(head *ListNode) *ListNode {
 	dummy := &ListNode{
 		Next: head,

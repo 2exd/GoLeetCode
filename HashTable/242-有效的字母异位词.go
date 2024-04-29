@@ -24,28 +24,22 @@ package main
 // }
 
 func isAnagram(s string, t string) bool {
-
-	m := make(map[int32]int, len(s))
-
-	if len(s) != len(t) {
+	lenS, lenT := len(s), len(t)
+	if lenS != lenT {
 		return false
 	}
-
-	for _, v := range s {
-		m[v]++
+	ms := make(map[int32]int, lenS)
+	for _, c := range s {
+		ms[c]++
 	}
-
 	for _, v := range t {
-
-		if _, ok := m[v]; !ok {
+		if _, ok := ms[v]; !ok {
 			return false
 		}
-		m[v]--
-
-		if m[v] < 0 {
+		ms[v]--
+		if ms[v] < 0 {
 			return false
 		}
 	}
-
 	return true
 }
